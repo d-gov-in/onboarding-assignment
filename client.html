@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Log Viewer</title>
+    </head>
+    <body>
+        <h1 style="text-align: center;">Log File Viewer</h1>
+        <div>
+            <pre id="log"></pre>
+        </div>
+    </body>
+
+
+    <script>
+        const loggerElement = document.getElementById('log');
+        const ws = new WebSocket('ws://localhost:8080/');
+
+        ws.onmessage = (event) => {
+            loggerElement.textContent += event.data;
+        }
+
+        ws.onopen = () => {
+            console.log('WS connection is open');
+        }
+
+        ws.onclose = () => {
+            console.log('WS connection closed');
+        }
+    </script>
+</html>
