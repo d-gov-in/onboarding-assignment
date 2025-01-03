@@ -1,5 +1,5 @@
 # onboarding-assignment
-Repo for onboarding assignment solution
+Repo for onboarding assignment solution related to tail -f.
 
 For running test cases - please install jest using
 - npm install jest
