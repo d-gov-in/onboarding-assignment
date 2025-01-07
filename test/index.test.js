@@ -56,7 +56,7 @@ describe("Application tests", () => {
       const ws = new WebSocket("ws://localhost:8080");
       ws.on("open", () => {
         setTimeout(() => {
-          fs.appendFileSync(mockFilePath, "test update \n");
+          fs.appendFileSync(mockFilePath, "\n test update \n");
           done();
         }, 1000);
       })
